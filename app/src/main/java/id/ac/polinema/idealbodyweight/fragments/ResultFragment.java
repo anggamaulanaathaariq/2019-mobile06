@@ -43,7 +43,7 @@ public class ResultFragment extends Fragment {
             public void onClick(View view) {
                 if (mListener != null) {
                     mListener.onTryAgainButtonClicked("BrocaIndex");
-                    mListener.onTryAgainButtonClicked("BodyMass");
+                    mListener.onTryAgainButtonClicked2("BodyMass");
                 }
             }
         });
@@ -82,6 +82,7 @@ public class ResultFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onTryAgainButtonClicked(String tag);
+        void onTryAgainButtonClicked2(String tag);
     }
 
     public void setInformation(String information) {

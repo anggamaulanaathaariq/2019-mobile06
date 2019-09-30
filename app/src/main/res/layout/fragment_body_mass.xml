@@ -23,12 +23,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:hint="Input your height (cm)"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:text="Input your height (cm)" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView6"
@@ -78,8 +78,8 @@
         android:layout_height="39dp"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="Input your weight (kg)"
         android:inputType="textPersonName"
-        tools:text="Input your weight (kg)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"

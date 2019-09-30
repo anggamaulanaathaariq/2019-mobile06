@@ -41,7 +41,6 @@ public class BodyMassFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_body_mass, container, false);
         final EditText heightText  = view.findViewById(R.id.input_height);
         final EditText weightText  = view.findViewById(R.id.input_weight);
-
         final Button calculateButton = view.findViewById(R.id.button_calculate);
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +51,9 @@ public class BodyMassFragment extends Fragment {
                     int checkedId = calculateButton.getHeight();
                     if ((checkedId != -1) && !TextUtils.isEmpty(heightString)) {
                         int height = Integer.parseInt(heightString);
-                        int gender = (checkedId == R.id.radio_male) ? BrocaIndex.MALE : BrocaIndex.FEMALE;
                         int weight = Integer.parseInt(weightString);
-                        BrocaIndex brocaIndex = new BrocaIndex(gender, height);
-                        BodyMass bodyMass = new BodyMass(gender, height, weight);
-                        mListener.onCalculateBodyMassClicked(brocaIndex.getIndex());
+                        BodyMass bodyMass  = new BodyMass(height,weight);
+                        mListener.onCalculateBodyMassClicked(bodyMass.getIndex());
                     } else {
                         Toast.makeText(getActivity(), "Please input your height & weight", Toast.LENGTH_SHORT).show();
                     }

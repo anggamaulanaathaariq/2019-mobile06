@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
 
 	@Override
 	public void onCalculateBrocaIndexClicked(float index) {
-		resultFragment.setInformation(String.format("Your ideal height is %.2f cm", index));
+		resultFragment.setInformation(String.format("Your ideal weight is %.2f cm", index));
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.fragment_container, resultFragment)
 				.commit();
@@ -86,7 +86,12 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
 
 	@Override
 	public void onCalculateBodyMassClicked(float index) {
-		resultFragment.setInformation(String.format("Your ideal weight is %.2f kg", index));
+		resultFragment.setInformation(String.format("Your ideal BMI is %.2f kg", index));
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.fragment_container, resultFragment)
+				.commit();
+	}
+	public void onTryAgainButtonClicked2(String tag) {
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.fragment_container, bodyMassFragment)
 				.commit();
