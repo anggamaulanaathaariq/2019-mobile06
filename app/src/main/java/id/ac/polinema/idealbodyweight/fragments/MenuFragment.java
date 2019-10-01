@@ -23,6 +23,7 @@ public class MenuFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+
     public MenuFragment() {
         // Required empty public constructor
     }

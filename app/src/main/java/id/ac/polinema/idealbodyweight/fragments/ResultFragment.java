@@ -18,11 +18,13 @@ import id.ac.polinema.idealbodyweight.R;
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link ResultFragment.OnFragmentInteractionListener} interface
+ * {@link ResultFragment.OnFragmentInteractionListener2} interface
  * to handle interaction events.
  */
 public class ResultFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener2 mListener2;
     private String information;
 
     public ResultFragment() {
@@ -43,7 +45,9 @@ public class ResultFragment extends Fragment {
             public void onClick(View view) {
                 if (mListener != null) {
                     mListener.onTryAgainButtonClicked("BrocaIndex");
-                    mListener.onTryAgainButtonClicked2("BodyMass");
+                }
+                else if (mListener2 != null) {
+                    mListener2.onTryAgainButtonClicked2("BodyMass");
                 }
             }
         });
@@ -57,6 +61,8 @@ public class ResultFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+        } else if (context instanceof OnFragmentInteractionListener2) {
+                mListener2 = (OnFragmentInteractionListener2) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -67,6 +73,7 @@ public class ResultFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        mListener2 = null;
     }
 
     /**
@@ -82,9 +89,12 @@ public class ResultFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onTryAgainButtonClicked(String tag);
+//        void onTryAgainButtonClicked2(String tag);
+    }
+    public interface OnFragmentInteractionListener2 {
+        // TODO: Update argument type and name
         void onTryAgainButtonClicked2(String tag);
     }
-
     public void setInformation(String information) {
         this.information = information;
     }

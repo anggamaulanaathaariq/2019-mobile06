@@ -83,17 +83,17 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
 				.replace(R.id.fragment_container, brocaIndexFragment)
 				.commit();
 	}
-
+	public void onTryAgainButtonClicked2(String tag) {
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.fragment_container, bodyMassFragment)
+				.commit();
+	}
 	@Override
 	public void onCalculateBodyMassClicked(float index) {
 		resultFragment.setInformation(String.format("Your ideal BMI is %.2f kg", index));
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.fragment_container, resultFragment)
 				.commit();
-	}
-	public void onTryAgainButtonClicked2(String tag) {
-		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.fragment_container, bodyMassFragment)
-				.commit();
+
 	}
 }

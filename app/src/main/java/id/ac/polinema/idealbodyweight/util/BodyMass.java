@@ -1,12 +1,12 @@
 package id.ac.polinema.idealbodyweight.util;
 
 public class BodyMass {
-    private int height;
+    private float height;
     private int weight;
     private float index;
 
 
-    public BodyMass(int height, int weight) {
+    public BodyMass(float height, int weight) {
         this.height = height;
         this.weight = weight;
         this.index = calculate();
@@ -17,7 +17,7 @@ public class BodyMass {
     }
 
     private float calculate() {
-        return weight / (height / 100 ^ 2);
+        return weight / ((height / 100 ) * (height / 100 ));
     }
 }
 
