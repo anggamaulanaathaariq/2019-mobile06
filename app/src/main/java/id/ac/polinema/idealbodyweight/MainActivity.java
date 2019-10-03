@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
 				.replace(R.id.fragment_container, resultFragment)
 				.commit();
 	}
-
 	@Override
 	public void onTryAgainButtonClicked(String tag) {
 		getSupportFragmentManager().beginTransaction()
